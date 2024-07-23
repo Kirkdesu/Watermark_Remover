@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Watermark Extractor</title>
+        <link rel="stylesheet" href="resources/watermark.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <div id="topbar">
+                <label>
+                    Contrast stretch
+                    <input type="checkbox" id="contrastStretch">
+                </label>
+                <label>
+                    Load Image 1
+                    <input type="file" id="inputImage1" />
+                </label>
+                <label>
+                    Image 1 BG color
+                    <input type="color" id="colorImage1" value="#000000" />
+                </label>
+                <button onclick="pickColor(1)">🔎</button>
+                <label>
+                    Default Position
+                    <select id="defaultPosition">
+                        <option value="top-left">Top Left</option>
+                        <option value="top-right">Top Right</option>
+                        <option value="center">Center</option>
+                        <option value="bottom-left">Bottom Left</option>
+                        <option value="bottom-right">Bottom Right</option>
+                    </select>
+                </label>
+                <label>
+                    Load Image 2
+                    <input type="file" id="inputImage2" />
+                </label>
+                <label>
+                    Image 2 BG color
+                    <input type="color" id="colorImage2" value="#ffffff" />
+                </label>
+                <button onclick="pickColor(2)">🔎</button>
+                <label>
+                    Preview filters
+                    <select id="overlayFilters">
+                        <option value="none">No filter</option>
+                        <option value="invert()">Invert</option>
+                        <option value="invert() hue-rotate(180deg)">Invert (only brightness)</option>
+                        <option value="grayscale(100%)">Grayscale</option>
+                    </select>
+                </label>
+                <label>
+                    Preview blending mode
+                    <select id="overlayMode">
+                        <option value="normal">Normal</option>
+                        <option value="difference">Difference</option>
+                        <option value="darken">Darken</option>
+                        <option value="lighten">Lighten</option>
+                        <option value="hard-light">Hard Light</option>
+                    </select>
+                </label>
+                <button onclick="extract()">Extract Watermark</button>
+            </div>
+            <div id="confirm" style="display: none;">
+                Do you want to save the changes? &nbsp;&nbsp;
+                <button onclick="confirmYes()"> Yes </button>
+                <button onclick="confirmNo()"> No </button>
+            </div>
+        </header>
+        <main>
+            <div id="imageContainer">
+                <canvas id="image1"></canvas>
+                <canvas id="image2" style="opacity: 0.5;"></canvas>
+                <div id="window" style="width: 300px; height: 150px; display: none;">
+                    <div id="windowSize"></div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+        <script src="resources/extract.js"></script>
+    </body>
+</html>
