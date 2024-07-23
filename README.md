@@ -1,10 +1,10 @@
 # Watermark_Remover
 
-[Readme Português](https://kirkdesu.github.io/Watermark_Remover/UNWATERMARKER.html)
+## https://kirkdesu.github.io/Watermark_Remover/
 
-[Readme English](https://kirkdesu.github.io/Watermark_Remover/UNWATERMARKER.html)
+[Readme Português](readme_ptbr.md)
 
-https://kirkdesu.github.io/Watermark_Remover/
+[Readme English](README.md)
 
 Não sou o criador, apenas criei o repositório
 
